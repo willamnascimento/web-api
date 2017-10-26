@@ -11,7 +11,7 @@ namespace WebApi.Data.configs
             HasKey(t => t.id);
 
             this.Property(t => t.id)
-               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Table & Column Mappings
             this.ToTable("account");

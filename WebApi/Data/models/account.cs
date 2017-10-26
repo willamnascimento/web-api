@@ -21,5 +21,7 @@ namespace WebApi.Data.Models
         public bool? ativo { get; set; }
 
         public bool? resetar_senha { get; set; }
+        public TimeSpan carga_horaria { get; set; }
+        
     }
 }
