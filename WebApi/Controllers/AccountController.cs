@@ -44,12 +44,30 @@ namespace WebApi.Controllers
                     db.SaveChanges();
                     retorno.Add("message", "Incluido com sucesso.");
                 }
-            }else
+            }
+            else
             {
                 retorno.Add("message", "E-mail ja existente.");
             }
             return retorno;
-    }
+        }
+
+        public Hashtable Login()
+        {
+            var retorno = new Hashtable();
+            var _params = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+            var email = _params["email"];
+            var senha = _params["senha"];
+
+            using (var db = new context())
+            {
+                if (db.accounts.Any(x => x.email == email && x.senha == senha))
+                    retorno.Add("message", "Usuário logado com sucesso.");
+                else
+                    retorno.Add("message", "Usuário não encontrado.");
+            }
+            return retorno;
+        }
 
         private bool IsValid(string email)
         {
