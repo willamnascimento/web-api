@@ -1,9 +1,16 @@
 using System;
+using System.Collections.Generic;
+using WebApi.Data.models;
 
 namespace WebApi.Data.Models
 {
     public partial class account
     {
+        public account()
+        {
+            notes = new List<pointing>();
+        }
+
         public int id { get; set; }
 
         public string nome { get; set; }
@@ -21,7 +28,11 @@ namespace WebApi.Data.Models
         public bool? ativo { get; set; }
 
         public bool? resetar_senha { get; set; }
+
         public TimeSpan carga_horaria { get; set; }
-        
+
+        public virtual ICollection<pointing> notes { get; set; }
+
+
     }
 }

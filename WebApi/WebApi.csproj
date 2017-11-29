@@ -206,7 +206,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\configs\account_config.cs" />
+    <Compile Include="Data\configs\pointing_config.cs" />
     <Compile Include="Data\context\context.cs" />
+    <Compile Include="Data\models\pointing.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
